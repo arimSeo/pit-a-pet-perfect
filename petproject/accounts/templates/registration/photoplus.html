@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사진추가하기</title>
+    <title>Add Photos</title>
 </head>
 <body>
     프로필사진 말고 추가 사진 올리는 곳
 
+    <form method="POST" enctype="multipart/form-data" action="{% url 'photoplus' %}">
+        {% csrf_token %}
+        {{plusphoto_form.as_p}}
+        <!-- p태그처럼 나눠짐 .as_p쓰면 -->
 
+        <a href ="{% url 'myprofile' %}"><input type="button" value="돌아가기"></a>   
+        <input type="submit" value="추가하기"> 
+    </form>
 
-
-    <a href ="{% url 'myprofile' %}"><input type="submit" value="돌아가기"></a>   
-    <a href ="{% url 'myprofile' %}"><input type="submit" value="추가하기"></a>   
+ 
 </body>
 </html>

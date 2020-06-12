@@ -4,50 +4,57 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PROFILE</title>
-        <script type="text/javascript" src="profile.jsp"></script>
-        <!-- <link rel="shortcut icon" type="image/" href="pitapet로고" /> -->
+        <title>MYPROFILE</title>
+
+        <!-- <link rel="shortcut icon" type="static/image/" href="logo.png"/> -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}">
     </head>
     <body>
-        인스타 프로필2 형태의 myprofile 페이지 입니다!!!<br>
-        1. 프로필이 등록되면 나오게!<br>
-        #프로필 사진 등록시 원 안에 뜨도록.
-        <br>
-        2. 메뉴바 내프로필 누르면 나오게!<br>
-        # 프로필 등록하고 다른 사람들 프로필도 나오게 할 수 있나?<br><br>
 
-        <!-- <p>ID: {{user}} 님</p> -->
-        <p>{{myprofile.pet_image}}</p>
-        <a href="{% url 'profileinform' %}"><input type="submit" value="profileinform"></a>
-        <p>{{myprofile.pet_name}}( {{myprofile.pet_type}}) </p>
-   
-        <p>follow | follower</p>
+        <p></p>
+        <!-- {{myprofile.user}} -->
+        <!-- <input type="hidden" name="user" value='{{user.id}}'/> 주소어뜨케넣기-->
 
+        <p>&&&&&&&&&&&프로필사진&&&&&&&&&</p>
         <div class="container">
+                {%if myprofile.pet_image%}
+            <img src='{{myprofile.pet_image.url}}' width="100" style="border-radius:80%">
+           <!-- 프로필사진등록안하면 아래사진으로 -->
+            {%else%}
+            <img src='https://ww.namu.la/s/6e2169ee0c893650ae2e9460f5cb1a1d21d1c0211d15f06716793ebed1cd82251a1ccfff20848faa68778375e3f52caf4e1228dab914198b7b06bb208a6b4d528dce882c960642997c258bfa4f3fa19a81f31fb935f83dac09cb11977e1b1d35' width="100" style="border-radius:80%">
+                {%endif%}
+
+            <a href="{% url 'profileinform' %}"><input type="submit" value="profileinform"></a>
+            <p>{{myprofile.pet_name}}
+                ({{myprofile.pet_type}})
+            </p>
+
+            <p>follow 42 | follower 42</p>
+
+        
+            <br>
+
+            <h4>추가하면 아래사진들 가로배열로 되게 만들기!!!!& 한줄에 사진 세칸만</h4>
+
+            {% for content in photo %}
+
+                <div class="my_pet">
+                    <img src="{{content.plus_image.url}}" width='90px' height='90px'>
+                </div>
+
+            {% endfor %}
+
             <div class="make_pet">
                 <a href="{% url 'photoplus' %}">
                     <div class="plus_btn">+</div>
                 </a>
-                <h3>
-                    사진추가</h3>
+
             </div>
+
         </div>
-        {% for pet in all_pet %}
-            <!-- <a href="{% url ' ' pet.myimage.url %}"> 펫사진 추가만! -->
-            <div class="my_pet">
-                <p>{{pet.myimage.url}}</p>
-            </div>
-            <!-- </a> -->
-        {% endfor %}
-    </div>
 
-    <!-- profile 등록때 펫이름 뜨게 하고싶다. -->
-    <!-- 회원가입 되면 계정안에 프로필 정보(팻정보)가 같이 저장됬나? user???-->
-    <!-- 계정.프로필생성 하면 프로필을 계정에 저장 request.user.myprofile-->
+        <a href="{% url 'startpage' %}"><input type="submit" value="startpage"></a>
+        <!-- 임시버튼---나중에 삭제 -->
 
-    <a href="{% url 'startpage' %}"><input type="submit" value="startpage"></a>
-    <!-- 임시버튼---나중에 삭제 -->
-
-</body>
+    </body>
 </html>

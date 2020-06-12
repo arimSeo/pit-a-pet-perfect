@@ -1,5 +1,10 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, forms
 from .models import UserLocation, RegiProfile, PlusPhoto
+from address.forms import AddressField
+
+class PersonForm(forms.Form):
+  address = AddressField()
+
 
 class LocationForm(ModelForm):
     class Meta:
@@ -13,7 +18,7 @@ class ProfileCreationForm(ModelForm):
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
-        super(ProfileCreationForm, self).__init__(**kwargs)
+        super().__init__(*args,**kwargs)
         self.fields['pet_name'].widget.attrs.update({
             'class':"hello",
             'placeholder':'ex)김태훈'

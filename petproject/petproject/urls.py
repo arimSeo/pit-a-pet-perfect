@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from accounts.views import startpage, register, regi_profile, myprofile, login, photoplus, profileinform
+from accounts.views import startpage, register, regi_profile, myprofile, login, photoplus, profileinform, maptest
 from django.contrib.auth.views import LoginView
+from django.conf.urls.static import static
+from django.conf import settings
 # from django.conf.urls.static import static
 
 
@@ -29,4 +31,4 @@ urlpatterns = [
     path('accounts/myprofile/', myprofile, name="myprofile"),
     path('accounts/photoplus/', photoplus, name="photoplus"),
     path('accounts/profileinform/', profileinform, name="profileinform"),
-]
+] +static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

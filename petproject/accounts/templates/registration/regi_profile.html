@@ -1,18 +1,121 @@
-<!DOCTYPE html>
+    {% load static %}   
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프로필 생성</title>
+    <title>PROFILE 생성</title>
+    <link rel="stylesheet" href="{% static 'css/regi_profile.css' %}">
+
+<!-- 지도 자바스크립트 아래거 붙이기 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10f82a9263a540ab140affb9aa6dbfd0&libraries=services"></script>
+
+    <!-- 아래는 주소에대한 css: 주소받은 위도경도 등록은 되고 화면에만 안보이게 한것 -->
+<!-- <style> 
+.lat {
+    display: none;
+}
+</style>  -->
+<!-- 확인차 일단 안넣고 마지막엔 저 style활성화시켜주세여! -->
+
 </head>
+
 <body>
-    <h1>프로필 생성</h1>
-    <form method="POST" >  
+
+    <!-- 프로필 생성 -->
+    <div class="form2">
+        <form method="POST"  enctype="multipart/form-data" action="{% url 'regi_profile' %}"> 
+         <h1>PROFILE Registration</h1>
+    
         {% csrf_token %}        
-        <!-- url 불러올때, post방식에서는 csrf공격을 막기위한 token을 같이 첨부 -->
-    {{regi_profile_form.as_p}} 
-    <!-- form을 p형식으로 -->
-    <a href ="{% url 'myprofile' %}"><input type="submit" value="등록하기"></a>     
-    </form>
+        <!-- {{regi_profile_form.as_p}}  -->
+        <!-- form을 p형식으로? -->
+        <!-- {{ regi_profile_form.user }} -->
+        <input type="hidden" name="user" value='{{user.id}}'/>
+        <p>1.pet 이름 {{ regi_profile_form.pet_name }}</p>
+        <p>2.종류 {{ regi_profile_form.pet_type }}</p>
+        <p>3.나이 {{ regi_profile_form.pet_age }}</p>
+        <p>4.성별 {{ regi_profile_form.pet_gender }}</p>
+        <p>5.주소
+            <!-- 지도 부분 아래 그대로 붙이기-->
+            
+            <input type="text" id="address" size="50">
+            <input type="button" value="주소등록버튼" onclick="addressChk()">
+            <div class="lat" id="coordXY"></div>
+            <script>
+                var map = new kakao
+                    .maps
+                    .Map(mapContainer, mapOption);
+    
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                    mapOption = {
+                        center: new kakao
+                            .maps
+                            .LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+    
+                if (address.value == "") {
+                    mapOption = {
+                        center: new kakao
+                            .maps
+                            .LatLng(35.134225, 129.103173), // 임의의 지도 중심좌표 , 제주도 다음본사로 잡아봤다.
+                        level: 4 // 지도의 확대 레벨
+                    };
+                }
+    
+                function addressChk() {
+    
+                    var address = document.getElementById("address");
+                    var coordXY = document.getElementById("coordXY");
+                    var gap = address.value; // 주소검색어
+    
+                    if (gap == "") {
+                        alert("주소를 입력해 주세요.");
+                        address.focus();
+                        return;
+                    }
+    
+                    // 주소-좌표 변환 객체를 생성
+                    var geocoder = new kakao
+                        .maps
+                        .services
+                        .Geocoder();
+    
+                    // 주소로 좌표를 검색
+                    geocoder.addressSearch(gap, function (result, status) {
+    
+                        // 정상적으로 검색이 완료됐으면,
+                        if (status == kakao.maps.services.Status.OK) {
+    
+                            var coords = new kakao
+                                .maps
+                                .LatLng(result[0].y, result[0].x);
+    
+                            y = result[0].x;
+                            x = result[0].y;
+    
+                            // 결과값으로 받은 위치를 마커로 표시합니다.
+                            var marker = new kakao
+                                .maps
+                                .Marker({map: map, position: coords});
+                            coordXY.innerHTML = "<br>위도 : " + x + "<br><br>경도 : " + y;
+                        }
+                    });
+                }
+            </script>
+    <!-- 여기까지 지도부분 그대로 붙이면되요 -->
+        </p>
+
+        <p>6.프로필 사진 {{ regi_profile_form.pet_image }}</p>
+        <p>7.pet 소개 {{ regi_profile_form.pet_intro }}</p>
+    
+      
+        <button class="btn"><span>등록하기</span></button>
+
+            <!-- <input type="submit" value="등록하기"> -->
+        </form>
+    </div>
 </body>
 </html>
