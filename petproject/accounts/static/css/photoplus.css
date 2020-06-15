@@ -1,7 +1,8 @@
 .nav {
-    /* margin-top: 30px; */
-    
-    position: absolute;
+    margin-top: 90px;
+    margin-bottom: 5px;
+
+    /* position: absolute; */
     width: 100%;
     border-radius: 10px;
     padding: 15px 35px;
@@ -12,7 +13,7 @@
   
   }
   
-  .nav .nav__list {
+.nav .nav__list {
     display: flex;
     justify-content: space-between;
 
@@ -30,12 +31,12 @@
 /*  */
 
 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
     height: 100vh;
     font-family: sans-serif;
@@ -46,9 +47,8 @@ body{
     align-items: center;
 }
 
-
 /* 대박, > form하나만 하니까 만사 오케이. 미쳤따!!! */
-.form2{
+.form2 > form{
     width: 400px;
     height: 600px;
     position: relative;
@@ -57,25 +57,50 @@ body{
     justify-content: center;
     /* align-self: center; */
     border-radius: 15px;
-    background-color: white;
+    padding: 0 px 0 px;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
 }
 
 .form2 input{
     width: 100%;
     height: 50px;
-    font-size: 30px;
-    color: white;
+    padding-top: 20px;
+    color: rgb(95, 44, 119);
     border: none;
-    background-color: rgba(243, 189, 236, 0.507);
-    border-bottom: 2px solid white;
+    background-color: rgb(255, 254, 254);
+    border-bottom: 2px solid rgb(95, 44, 119);
     outline: none;
 }
 
-button{
-    background-color: rgb(236, 222, 252);
+.form2 label{
+    transform: translateY(-50px);
+    pointer-events: none;
+}
+
+.contentEmail, .contentPass{
+    position: absolute;
+    top: 25px;
     color: rgb(95, 44, 119);
-    width: 150px;
+    /* transition: all .3s ease; */
+}
+.form2 input:focus+.labelEmail .contentEmail,
+.form2 input:valid+.labelEmail .contentEmail{
+    /* transform: translateY(-100%); */
+    font-size: 14px;
+    color: rgb(95, 44, 119);
+}
+
+
+.btn{
+    border-radius: 70px;
+    color: black;
+    font-weight: bolder;
+    float: right;
+
+    background-color: rgb(229, 211, 250);
+    color: rgb(95, 44, 119);
+    width: 100px;
     height: 40px;
     border: none;
     border-radius: 15px;
@@ -84,7 +109,7 @@ button{
     /* 이건 버튼 자체를 중앙 정렬 */
     align-items: center;
     /* 이건 버튼 내의 Login 글자를 중앙 정렬 */
-    margin-top: 40px;
+    margin-top: 10px;
     justify-content: center;
     font-size: 18px;
     /* text-align: center; */
@@ -93,9 +118,18 @@ button{
     transition: all .3s ease;
 }
 
-button:hover{
-    transform: translateY(8px);
+.btn:hover{
+    transform: translateY(10px);
 }
+h1{
+    align-self: center;
+    color: rgb(95, 44, 119);
+    margin-bottom: 25px;
+}
+
+
+  /* event-css부분 */
+
 
 
 .main_header{
@@ -106,50 +140,60 @@ button:hover{
     float: left;
     font-size: 28pt;
     background-color: rgb(255, 255, 255);
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
    font-family: 'Finger Paint', cursive;
 
 }
 
+/* event */
+.letter1{
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 400px;
+    height: 30px;
+    background-color: rgba(203, 140, 233, 0.521);
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+.letter2{
+    text-align: left;
+    font-size: 23px;
+    color: rgb(52, 5, 80);
+    font-family: 'HY바다L';
+
+}
+.letter3{
+    color:rgb(52, 5, 80);
+    font-weight: bold;
+}
 
 .letter{
     text-align: left;
     font-size: 18px;
-    color: rgb(52, 5, 80);
-
-}
-
-a{
-    text-decoration: none;
-}
-
-.container{
-    padding: 20px 30px 20px 30px;
-    height: 500px;
-}
-
-
-.make_pet, .my_pet{
+    color: rgb(3, 15, 26);
     
-    border: 1px solid rgb(92, 14, 122);
-    width: 90px;
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
 }
-.my_pet{
-    margin-top:10px;
-    display: inline-flex;
+
+.img0{
+    width:30px;
+    height:30px;
+    border-radius:80%;
+    
 }
-.plus_btn{
-    flex:1 ;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
+
+.font{
+    font-size: 14pt;
+
 }
-h3{
-    flex: 1;
-    display: flex;
-    align-items: center;
+
+h1{
+    align-self: center;
+    color: rgb(95, 44, 119);
+    margin-bottom: 25px;
+    font-family: 'HY강M';
 }

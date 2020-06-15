@@ -1,0 +1,260 @@
+.nav {
+    margin-top: 30px;
+    
+    /* position: absolute; */
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 35px;
+    background-color:rgba(89, 53, 105, 0.973);
+    left: 0px;
+    bottom: 0px;
+    /* border-top: 1px solid #f7f7f7; */
+  
+  }
+  
+.nav .nav__list {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  
+  .nav i {
+    font-size: 20px;
+    color: white;
+  }
+
+  ul {
+    list-style: none;
+    /* padding-inline-start: 0px; */
+}
+/*  */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: rgba(243, 189, 236, 0.507);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 대박, > form하나만 하니까 만사 오케이. 미쳤따!!! */
+.form2{
+    width: 400px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-self: center; */
+    border-radius: 10px;
+    padding: 0 px 0 px;
+    background-color: white;
+    box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
+}
+
+.form2 input{
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    color: white;
+    border: none;
+    background-color: rgba(243, 189, 236, 0.507);
+    border-bottom: 2px solid white;
+    outline: none;
+}
+
+.form2 label{
+    transform: translateY(-50px);
+    pointer-events: none;
+}
+
+.contentEmail, .contentPass{
+    position: absolute;
+    top: 25px;
+    color: white;
+    transition: all .3s ease;
+}
+.form2 input:focus+.labelEmail .contentEmail,
+.form2 input:valid+.labelEmail .contentEmail{
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: white;
+}
+
+.form2 input:focus+.labelPass .contentPass,
+.form2 input:valid+.labelPass .contentPass{
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: white;
+}
+button{
+    background-color: rgb(236, 222, 252);
+    color: rgb(95, 44, 119);
+    font-weight: bold;
+    width: 150px;
+    height: 80px;
+    border-color:rgb(95, 44, 119) ;
+    border-radius: 15px;
+    display: flex;
+    align-self: center; 
+    /* 이건 버튼 자체를 중앙 정렬 */
+    align-items: center;
+    /* 이건 버튼 내의 Login 글자를 중앙 정렬 */
+    margin-top: 40px;
+    justify-content: center;
+    font-size: 16px;
+    /* text-align: center; */
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+button:hover{
+    transform: translateY(10px);
+}
+
+.main_header{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color:rgb(219, 167, 252);
+    float: left;
+    font-size: 28pt;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 10px;
+   font-family: 'Finger Paint', cursive;
+
+}
+
+
+/* 지도 */
+.dot {
+    overflow:hidden;
+    float:left;
+    
+    width:12px;
+    height:12px;
+    
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/mini_circle.png');
+}    
+
+.dotOverlay {
+    position:relative;
+    bottom:10px;
+    
+    border-radius:6px;
+    border: 1px solid #ccc;
+    border-bottom:2px solid #ddd;
+    
+    float:left;
+
+    font-size:12px;
+    
+    padding:5px;
+    
+    background:#fff;
+}
+
+.dotOverlay:nth-of-type(n) {
+    border:0; 
+    box-shadow:0px 1px 2px #888;
+}
+
+.number {
+    font-weight:bold;
+    color:#ee6152;
+}
+
+.dotOverlay:after {
+    content:'';
+    
+    position:absolute;
+    
+    margin-left:-6px;
+    left:50%;
+    bottom:-8px;
+    
+    width:11px;
+    height:8px;
+    
+    background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white_small.png')
+}
+
+.distanceInfo {
+    position:relative;
+    
+    top:5px;
+    left:5px;
+    
+    list-style:none;
+    
+    margin:0;
+}
+
+.distanceInfo .label {
+    display:inline-block;
+    
+    width:50px;
+}
+
+.distanceInfo:after {
+    content:none;
+}
+
+.customoverlay {
+    position:relative;
+    bottom:85px;
+    border-radius:6px;
+    border: 1px solid #ccc;
+    border-bottom:2px solid #ddd;
+    float:left;
+}
+
+.customoverlay:nth-of-type(n) {
+    border:0; 
+    box-shadow:0px 1px 2px #888;
+}
+
+/* .customoverlay a {
+    display:block;
+    text-decoration:none;
+    color:#000;
+    text-align:center;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:bold;
+    overflow:hidden;
+    background: #d95050;
+    background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;
+} */
+
+.customoverlay .title {
+    display:block;
+    text-align:center;
+    background:#fff;
+    margin-right:10px;
+    padding:10px 15px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.customoverlay:after {
+    content:'';
+    position:absolute;
+    margin-left:-12px;
+    left:50%;
+    bottom:-12px;
+    width:22px;
+    height:12px;
+    background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}

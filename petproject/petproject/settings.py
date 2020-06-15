@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'address',
    
 ]
 
@@ -124,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-GOOGLE_API_KEY = 'AIzaSyD--your-google-maps-key-SjQBE'
+
 
 LOGIN_REDIRECT_URL = '/accounts/myprofile'
 #로그아웃은 안만들어도 됨.

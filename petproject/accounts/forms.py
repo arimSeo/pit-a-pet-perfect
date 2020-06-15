@@ -1,10 +1,12 @@
-from django.forms import ModelForm, forms
-from .models import UserLocation, RegiProfile, PlusPhoto
-from address.forms import AddressField
+from django.forms import ModelForm
+from .models import UserLocation, RegiProfile, PlusPhoto, Address
+from django import forms
 
-class PersonForm(forms.Form):
-  address = AddressField()
 
+class addrForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        fields = ('lat', 'lon')
 
 class LocationForm(ModelForm):
     class Meta:

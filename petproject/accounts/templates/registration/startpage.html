@@ -1,23 +1,32 @@
-
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PIT-A-PET start!</title>
-   
+    <link rel="stylesheet" href="{% static 'css/startpage.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    -------제일 처음화면-------
-    회원가입 로그인 페이지 입니다.<br>
-    로고 &nbsp PIT-A-PET<br>
-
-
-    <a href ="{% url 'register' %}"><button>SIGN UP</button></a>
-    <a href ="{% url 'login' %}"><button>LOGIN</button></a>
-
-    <br><br>
- 
+    <div class="form2">
+        <div class="logo_box">
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" width=200px height=180px>
+            </div>
+            <div class="letter">PIT-A-PET</div>
+            <div class="info2">
+                <div class="register"> <a href="{% url 'register' %}">SIGN UP</a>
+                </div>
+                <div class="login"> <a href="{% url 'login' %}">LOGIN</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

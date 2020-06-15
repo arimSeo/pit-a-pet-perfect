@@ -1,18 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN</title>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}?v=1.0">
 </head>
+
 <body>
-    <h3>로그인 페이지</h3>
+    <div class="form3">
+        <form action="{% url 'myprofile'%}" method="POST">
+            <!-- <form action="{% url 'login'%}" method="POST"> -->
+            {% csrf_token %}
+
+            <h3 class="main_header">
+                <img src="{% static 'images/logo.png' %}" width='70' height='60'>
+                PIT- A -PET&nbsp; 
+                </h3>
+<br><br><br>
+
+            <h1>LOGIN</h1>
+            <input type="text" id='email' name="username" autocomplete="off" required>
+            <label for="email" class="labelEmail">
+                <span class="contentEmail">ID</span>
+            </label>
+<br>
+
+            <input type="password" id='pass' name='password1' required>
+            <label for="pass" class="labelPass">
+                <span class="contentPass">password</span>
+            </label>
+            <button class="btn">Login</button>
+
+            
+            </form>
+    </div>
+
+<!--   
     <form method = "POST">
         {% csrf_token %}
         {{form.as_p}}
 
         <a href ="{% url 'myprofile' %}"><input type="submit" value="Login"></a>    
-    </form>
+    </form> -->
 </body>
 </html>

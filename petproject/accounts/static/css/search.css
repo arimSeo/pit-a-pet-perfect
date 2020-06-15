@@ -1,7 +1,7 @@
 .nav {
-    /* margin-top: 30px; */
+    margin-top: 30px;
     
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     border-radius: 10px;
     padding: 15px 35px;
@@ -12,7 +12,7 @@
   
   }
   
-  .nav .nav__list {
+.nav .nav__list {
     display: flex;
     justify-content: space-between;
 
@@ -57,6 +57,7 @@ body{
     justify-content: center;
     /* align-self: center; */
     border-radius: 15px;
+    padding: 0 px 0 px;
     background-color: white;
     box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
 }
@@ -64,7 +65,7 @@ body{
 .form2 input{
     width: 100%;
     height: 50px;
-    font-size: 30px;
+    padding-top: 20px;
     color: white;
     border: none;
     background-color: rgba(243, 189, 236, 0.507);
@@ -72,9 +73,32 @@ body{
     outline: none;
 }
 
+.form2 label{
+    transform: translateY(-50px);
+    pointer-events: none;
+}
+
+.contentEmail, .contentPass{
+    position: absolute;
+    top: 25px;
+    color: white;
+    transition: all .3s ease;
+}
+.form2 input:focus+.labelEmail .contentEmail,
+.form2 input:valid+.labelEmail .contentEmail{
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: white;
+}
+
+.form2 input:focus+.labelPass .contentPass,
+.form2 input:valid+.labelPass .contentPass{
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: white;
+}
 button{
-    background-color: rgb(236, 222, 252);
-    color: rgb(95, 44, 119);
+    color: white;
     width: 150px;
     height: 40px;
     border: none;
@@ -84,9 +108,9 @@ button{
     /* 이건 버튼 자체를 중앙 정렬 */
     align-items: center;
     /* 이건 버튼 내의 Login 글자를 중앙 정렬 */
-    margin-top: 40px;
+    margin-top: 30px;
     justify-content: center;
-    font-size: 18px;
+    font-size: 16px;
     /* text-align: center; */
     outline: none;
     cursor: pointer;
@@ -94,7 +118,24 @@ button{
 }
 
 button:hover{
-    transform: translateY(8px);
+    transform: translateX(5px);
+}
+
+
+
+  /* event-css부분 */
+
+.btn{
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    border-radius: 70px;
+    background-color: rgba(241, 225, 250, 0.795);
+    width: 50px;
+    height: 30px;
+    color: black;
+    font-weight: bolder;
+    float: right;
 }
 
 
@@ -106,50 +147,53 @@ button:hover{
     float: left;
     font-size: 28pt;
     background-color: rgb(255, 255, 255);
-    margin-top: 30px;
+    margin-top: 10px;
    font-family: 'Finger Paint', cursive;
 
 }
 
+/* event */
+.letter1{
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    width: 400px;
+    height: 30px;
+    background-color: rgba(203, 140, 233, 0.521);
+    font-weight: bolder;
+    margin-top: 10px;
+}
+
+.letter2{
+    text-align: left;
+    font-size: 23px;
+    color: rgb(52, 5, 80);
+    font-family: 'HY바다L';
+
+}
+.letter3{
+    color:rgb(52, 5, 80);
+    font-weight: bold;
+}
 
 .letter{
     text-align: left;
     font-size: 18px;
-    color: rgb(52, 5, 80);
-
-}
-
-a{
-    text-decoration: none;
-}
-
-.container{
-    padding: 20px 30px 20px 30px;
-    height: 500px;
-}
-
-
-.make_pet, .my_pet{
+    color: rgb(3, 15, 26);
     
-    border: 1px solid rgb(92, 14, 122);
-    width: 90px;
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
 }
-.my_pet{
-    margin-top:10px;
-    display: inline-flex;
+
+.img0{
+    width:30px;
+    height:30px;
+    border-radius:80%;
+    
 }
-.plus_btn{
-    flex:1 ;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
+
+.font{
+    font-size: 14pt;
+
 }
-h3{
-    flex: 1;
-    display: flex;
-    align-items: center;
-}
+

@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>main-homepage</title>
+            <!-- 로고 타이틀 폰트!! -->
+            <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+            
+            <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}?v=1.0">
+                <script src="https://kit.fontawesome.com/703c3b8202.js" crossorigin="anonymous"></script>
+           
+            </head>
+            
+            <body>
+                <div class="form2">
+                    <div class="container">
+        <!-- <hr color="#4F156A" size=10px > -->
+                <h3 class="main_header">
+                <img src="{% static 'images/logo.png' %}" width='70' height='60'>
+                PIT- A -PET&nbsp; 
+                </h3>
+<br><br><br>
+
+            <p class='letter1'>&nbsp;&nbsp;| EVENT | </p> 
+       <button class="btn"><div class="letter">+</div></button>
+          
+    <br>  
+        <p class="letter2">▷▶ BEST PHOTO Pet 후보 </p>
+        <br>
+
+        <div class="letter">
+    <marquee direction="left" scrollamount="15" behavior= slide>
+    <img src="{% static 'images/event_cat.jpg' %}" width='120' height='100'>&nbsp;
+   
+    <img src="{% static 'images/event_alpa.png' %}" width='100' height='100'>&nbsp;
+   
+    <img src="{% static 'images/사자.jpg' %}" width='120' height='95'>&nbsp;
+    <i class="fa fa-arrow-right"></i>
+    <br>
+    <p class="letter3">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1위
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    2위 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3위
+</p>
+<br>  
+</marquee>
+
+
+<hr color="#F5D6FF" size=5px>
+
+    <button class="btn"><div class="letter">+</div></button>
+    <br>
+    <p class='letter2'>
+     ▷▶Monthly 산책왕 [6월] <br></p>
+    <!-- (지역: 부산시 금정구 ) -->
+    
+    <br>
+
+    <marquee class="font" direction="up" scrollamount="2">
+        &nbsp;&nbsp;&nbsp;&nbsp; 1. <img class='img0' src="{% static 'images/애용2.png' %}"> 애용이 (+290km)&nbsp; ▲
+    </marquee>
+    <marquee class="font" direction="down" scrollamount="1">
+        &nbsp;&nbsp;&nbsp;&nbsp; 2. <img class='img0' src="{% static 'images/파카2.jpeg' %}"> &nbsp;파카 &nbsp; (+102km) &nbsp;▼ 
+    </marquee>
+    <marquee class="font" direction="down" scrollamount="0">
+        &nbsp;&nbsp;&nbsp;&nbsp; 3. <img class='img0' src="{% static 'images/달수.jpg' %}"> &nbsp;달수 &nbsp; (+50km)&nbsp;&nbsp;&nbsp; -
+    </marquee>
+           
+        </div>
+      
+      <nav class="nav">
+                 <ul class="nav__list">
+                     <li class="nav__list-item">
+                         <a href="{% url 'myprofile' %}">
+                             <i class="far fa-user"></i>
+                         </a>
+                     </li>
+                     <li class="nav__list-item">
+                         <a href="{% url 'matching' %}">
+                             <i class="fas fa-comment"></i>
+                         </a>
+                     </li>
+                     <li class="nav__list-item">
+                         <a href="{% url 'home' %}">
+                             <i class="fas fa-home"></i>
+                         </a>
+                     </li>
+                     <li class="nav__list-item">
+                         <a href="{% url 'map_home' %}">
+                             <i class="fas fa-map-marked-alt"></i>
+                         </a>
+                     </li>
+                     <li class="nav__list-item">
+                         <a href="info.html">
+                             <i class="fas fa-ellipsis-h"></i>
+                         </a>
+                     </li>
+                 </ul>
+             </nav>
+    </div>
+</div>
+
+    </body>
+</html>

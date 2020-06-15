@@ -1,19 +1,60 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="kr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
+
 <body>
-    <h1>회원가입 시켜줄때 해르</h1>
-    <form method="POST" >  
-        {% csrf_token %}        
-        <!-- url 불러올때, post방식에서는 csrf공격을 막기위한 token을 같이 첨부 -->
-    {{register_form.as_p}} 
-    {{location_form}}
-    <!-- form을 p형식으로 -->
-    <a href ="{% url 'regi_profile' %}"><input type="submit" value="다음단계"></a>     
-    </form>
+
+
+    <div class="form2">
+
+        <form action="{% url 'register'%}" method="POST">
+            <h1>Sign-Up</h1>
+            {% csrf_token %}
+
+
+            <input type="text" name='username' id="email" autocomplete="off" required>
+            <label for="email" class="labelEmail">
+                <span class="contentEmail">ID</span>
+            </label>
+            <br>
+            <input type="password" name="password1" id="pass" required>
+            <label for="pass" class="labelPass">
+                <span class="contentPass">password</span>
+            </label>
+            <br>
+
+            <input type="password" name="password2" id="pass" required>
+            <label for="pass" class="labelPass">
+                <span class="contentPass">password 확인</span>
+            </label>
+            <br><br>
+            <br>
+
+            <!--  -->
+            <input type="checkbox" name="ispermit" id="pass" required>
+            <label for="check" class="labelcheck">
+                <span class="contentCheck">
+                    위치 정보 수집 동의
+                </span>
+            </label>
+
+
+
+            <br>
+            <button class="btn"><span>NEXT</span></button>
+
+
+        </form>
+    </div>
+
 </body>
+
 </html>

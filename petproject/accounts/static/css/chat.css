@@ -1,0 +1,125 @@
+.chat__write {
+  position: fixed;
+  bottom: 50px;
+  width: 80%;
+  /* fixed된 객체를 centering 하는 방법 */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcfcfc;
+  padding: 0px 20px;
+  border-radius: 40px;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+}
+
+.chat__write-columns:nth-child(2) {
+  width: 80%;
+  /* 이게 90%가 되면, 옆의 아이콘들이 밀려 올라온다.80%가 maximum */
+}
+.chat__write-columns input {
+  border: none;
+  padding: 20px 10px;
+  width: 100%;
+  font-size: 14px;
+}
+.chat__write-columns input:focus {
+  outline: none;
+}
+.chat__write i {
+  font-size: 20px;
+}
+.chats__chat {
+  margin-top: 25px;
+}
+
+/* subtle patterns:배경화면 */
+.chat-screen {
+  /* background-image: url("C:/chatBg.png"); */
+  min-height: 100vh;
+}
+.chats__body .header,
+.chats__body .status-bar {
+  padding: 0px 20px;
+}
+.chats__body {
+  padding: 10px 0px;
+}
+
+.chat-screen .chat__messages {
+  border-top: 1px solid #f7f7f7;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 20px;
+  align-items: center;
+}
+.chat__messages .chat__timestamp {
+  background-color: white;
+  font-size: 13px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.message {
+  display: flex;
+  /* align-items: flex-start; */
+  /* width: 50%;
+  이걸 지우니까, outcoming-message의 여백 생기는 문제 해결 */
+
+  margin-bottom: 20px;
+}
+
+.incoming-message img {
+  margin-right: 15px;
+  width: 50px;
+  border-radius: 30px;
+  /* message_bubble에 display:block을 주면서 사진이 찌부가 되는데,
+  inspection으로 width와 border-radius를 변경해가며 맞는 비율을 찾았다. */
+}
+
+.incoming-message {
+  align-self: flex-start;
+}
+.outcoming-message {
+  align-self: flex-end;
+}
+
+.message .message_bubble {
+  background-color: gray;
+  /* width: 50%; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
+    rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
+  padding: 15px 20px;
+  display: block;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+}
+
+.incoming-message .message__author {
+  margin-top: 10px;
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.incoming-message .message_bubble {
+  background-image: linear-gradient(to right, #ff9966, #ff5e62);
+  border-bottom-left-radius: 0px;
+}
+.outcoming-message .message_bubble {
+  border-bottom-right-radius: 0px;
+  background-image: linear-gradient(to left, #ff9966, #ff5e62);
+}
+/* uigradient, bubblecolor */

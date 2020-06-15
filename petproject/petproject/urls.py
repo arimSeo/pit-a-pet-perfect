@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from accounts.views import startpage, register, regi_profile, myprofile, login, photoplus, profileinform, maptest
+from accounts.views import startpage, register, regi_profile, myprofile, login, photoplus, profileinform, home, lat_lon, matching, map_home, first, second, third
 from django.contrib.auth.views import LoginView
 from django.conf.urls.static import static
 from django.conf import settings
@@ -24,6 +24,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/home/', home, name="home"),
     path('',startpage, name="startpage"),
     path('accounts/register/', register, name="register"),
     path('accounts/regi_profile/', regi_profile, name="regi_profile"),
@@ -31,4 +32,11 @@ urlpatterns = [
     path('accounts/myprofile/', myprofile, name="myprofile"),
     path('accounts/photoplus/', photoplus, name="photoplus"),
     path('accounts/profileinform/', profileinform, name="profileinform"),
+    path('lat_lon/', lat_lon, name="lat_lon"),
+    path('accounts/matching/', matching, name="matching"),
+    path('accounts/map_home/', map_home, name="map_home"),
+    path('accounts/first/', first, name="first"),
+    path('accounts/second/', second, name="second"),
+    path('accounts/third/', third, name="third"),
+
 ] +static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

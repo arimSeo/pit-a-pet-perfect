@@ -1,41 +1,8 @@
-.nav {
-    /* margin-top: 30px; */
-    
-    position: absolute;
-    width: 100%;
-    border-radius: 10px;
-    padding: 15px 35px;
-    background-color:rgba(89, 53, 105, 0.973);
-    left: 0px;
-    bottom: 0px;
-    /* border-top: 1px solid #f7f7f7; */
-  
-  }
-  
-  .nav .nav__list {
-    display: flex;
-    justify-content: space-between;
-
-  }
-  
-  .nav i {
-    font-size: 20px;
-    color: white;
-  }
-
-  ul {
-    list-style: none;
-    /* padding-inline-start: 0px; */
-}
-/*  */
-
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
     height: 100vh;
     font-family: sans-serif;
@@ -47,8 +14,9 @@ body{
 }
 
 
+
 /* 대박, > form하나만 하니까 만사 오케이. 미쳤따!!! */
-.form2{
+.form3 > form{
     width: 400px;
     height: 600px;
     position: relative;
@@ -57,21 +25,46 @@ body{
     justify-content: center;
     /* align-self: center; */
     border-radius: 15px;
-    background-color: white;
+    padding: 0 15px 0 15px;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
 }
 
-.form2 input{
+.form3 input{
     width: 100%;
     height: 50px;
-    font-size: 30px;
-    color: white;
+    padding-top: 20px;
+    color: rgb(95, 44, 119);
     border: none;
-    background-color: rgba(243, 189, 236, 0.507);
-    border-bottom: 2px solid white;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(95, 44, 119);
     outline: none;
 }
 
+.form3 label{
+    transform: translateY(-50px);
+    pointer-events: none;
+}
+
+.contentEmail, .contentPass{
+    position: absolute;
+    top: 25px;
+    color: rgb(95, 44, 119);
+    transition: all .3s ease;
+}
+.form3 input:focus+.labelEmail .contentEmail,
+.form3 input:valid+.labelEmail .contentEmail{
+    transform: translateY(-100%);
+    font-size: 15px;
+    color: rgb(95, 44, 119);
+}
+
+.form3 input:focus+.labelPass .contentPass,
+.form3 input:valid+.labelPass .contentPass{
+    transform: translateY(-100%);
+    font-size: 15px;
+    color: rgb(95, 44, 119);
+}
 button{
     background-color: rgb(236, 222, 252);
     color: rgb(95, 44, 119);
@@ -91,65 +84,28 @@ button{
     outline: none;
     cursor: pointer;
     transition: all .3s ease;
+    margin-bottom: 70px;
 }
+
 
 button:hover{
-    transform: translateY(8px);
+    transform: translateY(10px);
 }
-
+h1{
+    align-self: center;
+    color: rgb(95, 44, 119);
+    margin-bottom: 40px;
+}
 
 .main_header{
     display: flex;
     text-align: center;
     align-items: center;
     color:rgb(219, 167, 252);
-    float: left;
+    float: center;
     font-size: 28pt;
     background-color: rgb(255, 255, 255);
-    margin-top: 30px;
-   font-family: 'Finger Paint', cursive;
+    margin-bottom: 30px;
+    font-family: 'Finger Paint', cursive;
 
-}
-
-
-.letter{
-    text-align: left;
-    font-size: 18px;
-    color: rgb(52, 5, 80);
-
-}
-
-a{
-    text-decoration: none;
-}
-
-.container{
-    padding: 20px 30px 20px 30px;
-    height: 500px;
-}
-
-
-.make_pet, .my_pet{
-    
-    border: 1px solid rgb(92, 14, 122);
-    width: 90px;
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.my_pet{
-    margin-top:10px;
-    display: inline-flex;
-}
-.plus_btn{
-    flex:1 ;
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-}
-h3{
-    flex: 1;
-    display: flex;
-    align-items: center;
 }

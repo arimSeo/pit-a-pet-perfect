@@ -1,19 +1,78 @@
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROFILE 세부정보</title>
-</head>
-<body>
-    <!-- <p>{{myprofile.pet_image}}</p> -->
-    <p>PET 이름: {{myprofile.pet_name}} </p>
-    <p>PET 종류: {{myprofile.pet_type}}</p>
-    <p>PET 나이: {{myprofile.pet_age}} 세</p>
-    <p>펫 소개:{{myprofile.pet_intro}} </p>
-    <p>친한친구: 42 마리 </p>
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/703c3b8202.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/profileinform.css' %}?v=1.0">
 
-    <a href ="{% url 'myprofile' %}"><input type="submit" value="돌아가기"></a> 
-    
+</head>
+
+<body>
+   
+    <div class="form2">
+        
+        <div>
+            <h3 class="main_header">
+                <img src="{% static 'images/logo.png' %}" width='70' height='60'>
+                PIT- A -PET&nbsp; 
+                </h3>
+                
+                <br><br><br><br><br><br>
+        <form action="{% url 'myprofile' %}" method="POST">
+            {% csrf_token %}
+            <hr color="#6B0781" size=5px>
+
+    <div class="letter"><br><br>
+        <p>&nbsp;&nbsp; PET 이름: &nbsp; {{myprofile.pet_name}} </p><br>
+        <p>&nbsp;&nbsp; PET 종류: &nbsp; {{myprofile.pet_type}}</p><br>
+        <p>&nbsp;&nbsp; PET 나이: &nbsp; {{myprofile.pet_age}} 세</p><br>
+        <p>&nbsp;&nbsp; PET 소개: &nbsp; {{myprofile.pet_intro}} </p><br>
+        <p>&nbsp;&nbsp; BEST Friends: &nbsp; 42 마리 </p>
+        <br>
+        <p>................................................................................................</p>
+    </div>
+    <hr color="#6B0781" size=5px>
+        <!-- <a href="{% url 'myprofile' %}"><input class="btn" type="submit" value="B A C K"></a> -->
+        <div align=center ><button>B A C K</button></div>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__list-item">
+                <a href="{% url 'myprofile' %}">
+                    <i class="far fa-user"></i>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="{% url 'matching' %}">
+                    <i class="fas fa-comment"></i>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="{% url 'home' %}">
+                    <i class="fas fa-home"></i>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="{% url 'map_home' %}">
+                    <i class="fas fa-map-marked-alt"></i>
+                </a>
+            </li>
+            <li class="nav__list-item">
+                <a href="info.html">
+                    <i class="fas fa-ellipsis-h"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</form>
+</div>
+</div>
 </body>
+
 </html>

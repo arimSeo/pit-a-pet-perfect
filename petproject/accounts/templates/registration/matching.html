@@ -1,0 +1,146 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/703c3b8202.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/matching.css' %}">
+  <title>MATCHING</title>
+</head>
+
+<body>
+  <div class="form3">
+    <h3 class="main_header">
+      <img src="{% static 'images/logo.png' %}" width='70' height='60'>
+      PIT- A -PET&nbsp;
+    </h3>
+    <main class="chats">
+      <ul class="chats__list">
+        <li class="chats__chat chat">
+          <a href="chat.html">
+            <div class="chats__chat friend friend--lg">
+              <div class="friend__column">
+                <img src="{% static 'images/애용2.png'%}" class="m-avatar friend__avatar" />
+                <div class="friend__content">
+                  <span class="friend__name">
+                    chichi
+                  </span>
+                  <span class="friend__bottom-text">
+                    코딩 조지실?
+                  </span>
+                </div>
+              </div>
+
+              <div class="friend__column">
+                <span class="chat__timestamp">Jun 14</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="chats__chat chat">
+          <a href="chat.html">
+            <div class="chats__chat friend friend--lg">
+              <div class="friend__column">
+                <img src="{% static 'images/애용3.gif'%}" class="m-avatar friend__avatar" />
+                <div class="friend__content">
+                  <span class="friend__name">
+                    ted
+                  </span>
+                  <span class="friend__bottom-text">
+                    ㅇㅇ 모각코 ㄱ
+                  </span>
+                </div>
+              </div>
+
+              <div class="friend__column">
+                <span class="chat__timestamp">Jun 14</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="chats__chat chat">
+          <a href="chat.html">
+            <div class="chats__chat friend friend--lg">
+              <div class="friend__column">
+                <img src="{% static 'images/애용4.gif'%}" class="m-avatar friend__avatar" />
+                <div class="friend__content">
+                  <span class="friend__name">
+                    arim
+                  </span>
+                  <span class="friend__bottom-text">
+                    소주 수혈
+                  </span>
+                </div>
+              </div>
+
+              <div class="friend__column">
+                <span class="chat__timestamp">Jun 14</span>
+              </div>
+            </div>
+          </a>
+        </li>
+
+        <li class="chats__chat chat">
+          <a href="chat.html">
+            <div class="chats__chat friend friend--lg">
+              <div class="friend__column">
+                <img src="{% static 'images/애용.png'%}" class="m-avatar friend__avatar" />
+                <div class="friend__content">
+                  <span class="friend__name">
+                    ngbs
+                  </span>
+                  <span class="friend__bottom-text">
+                    자바스크립트 노답
+                  </span>
+                </div>
+              </div>
+
+              <div class="friend__column">
+                <span class="chat__timestamp">Jun 14</span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a href="{% url 'myprofile' %}">
+            <i class="far fa-user"></i>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a href="{% url 'matching' %}">
+            <i class="fas fa-comment"></i>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a href="{% url 'home' %}">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a href="{% url 'map_home' %}">
+            <i class="fas fa-map-marked-alt"></i>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a href="info.html">
+            <i class="fas fa-ellipsis-h"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</body>
+
+</html>

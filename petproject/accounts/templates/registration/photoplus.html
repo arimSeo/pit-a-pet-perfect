@@ -1,22 +1,79 @@
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Photos</title>
+       <!-- 로고 타이틀 폰트!! -->
+       <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+            
+       <link rel="stylesheet" type="text/css" href="{% static 'css/photoplus.css' %}?v=1.0">
+           <script src="https://kit.fontawesome.com/703c3b8202.js" crossorigin="anonymous"></script>
+      
+
 </head>
 <body>
-    프로필사진 말고 추가 사진 올리는 곳
-
+   
+    <div class="form2">
     <form method="POST" enctype="multipart/form-data" action="{% url 'photoplus' %}">
         {% csrf_token %}
-        {{plusphoto_form.as_p}}
+        
+        <h3 class="main_header">
+            <img src="{% static 'images/logo.png' %}" width='70' height='60'>
+            PIT- A -PET&nbsp; 
+            </h3>
+
+
+            <br><br><br><br>
+           
+            <h1>Add Photo</h1>
+                <input class="" type="file" name='plus_image' id="email" autocomplete="off" required>
+                
+                <label for="email" class="labelEmail">
+                    <!-- <div class="contentEmail">ADD Photo</div> -->
+                </label>
+                <br>
+
         <!-- p태그처럼 나눠짐 .as_p쓰면 -->
 
-        <a href ="{% url 'myprofile' %}"><input type="button" value="돌아가기"></a>   
-        <input type="submit" value="추가하기"> 
+        <a href ="{% url 'myprofile' %}"><input class="btn" type="button" value="B A C K"></a>   
+        <input class="btn" type="submit" value="A D D"> 
+
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__list-item">
+                    <a href="{% url 'myprofile' %}">
+                        <i class="far fa-user"></i>
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="{% url 'matching' %}">
+                        <i class="fas fa-comment"></i>
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="{% url 'home' %}">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="{% url 'map_home' %}">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="info.html">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
     </form>
 
- 
+ </div>
+
 </body>
 </html>

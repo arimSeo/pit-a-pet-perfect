@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/first.css' %}">
+</head>
+<body>
+  <div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" placeholder="키워드를 입력하세요">
+       <button type="submit" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="popular word">
+    <div>
+        인기검색어
+    </div>
+
+    <div class="keyword_box">강아지 간식</div>
+    <div class="keyword_box">고양이 사료</div>
+    <div class="keyword_box">24시 동물병원</div>
+
+</div>
+</body>
+</html>

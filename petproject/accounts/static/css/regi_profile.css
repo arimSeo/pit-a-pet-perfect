@@ -1,0 +1,119 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: rgba(243, 189, 236, 0.507);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 대박, > form하나만 하니까 만사 오케이. 미쳤따!!! */
+.form2 > form{
+    width: 400px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-self: center; */
+    border-radius: 15px;
+    padding: 0 15px 0 15px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 25px 36px 12px rgba(0, 0, 0, 0.51);
+}
+
+.form2 input{
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    color: rgb(95, 44, 119);
+    border: none;
+    background-color: rgb(255, 254, 254);
+    border-bottom: 2px solid rgb(95, 44, 119);
+    outline: none;
+}
+
+.form2 label{
+    transform: translateY(-50px);
+    pointer-events: none;
+}
+
+.contentEmail, .contentPass{
+    position: absolute;
+    top: 25px;
+    color: rgb(95, 44, 119);
+    transition: all .3s ease;
+}
+.form2 input:focus+.labelEmail .contentEmail,
+.form2 input:valid+.labelEmail .contentEmail{
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: rgb(95, 44, 119);
+}
+
+.form2 input:focus+.labelPass .contentPass,
+.form2 input:valid+.labelPass .contentPass{
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: rgb(95, 44, 119);
+}
+
+.gender{
+    color:rgb(95, 44, 119);
+}
+
+.locate_btn{
+    background-color: rgba(241, 235, 247, 0.692);
+    color: rgb(95, 44, 119);
+    width: 350px;
+    border: none;
+    height: 30px;
+    /* border: none; */
+    /* border-radius: 15px; */
+    align-self: center; 
+    /* 이건 버튼 자체를 중앙 정렬 */
+    align-items: center;
+    /* 이건 버튼 내의 Login 글자를 중앙 정렬 */
+    margin-top: 5px;
+    justify-content: center;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn{
+    background-color: rgb(236, 222, 252);
+    color: rgb(95, 44, 119);
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    align-self: center; 
+    /* 이건 버튼 자체를 중앙 정렬 */
+    align-items: center;
+    /* 이건 버튼 내의 Login 글자를 중앙 정렬 */
+    margin-top: 10px;
+    justify-content: center;
+    font-size: 18px;
+    /* text-align: center; */
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn:hover{
+    transform: translateX(10px);
+}
+h1{
+    align-self: center;
+    color: rgb(95, 44, 119);
+    margin-bottom: 25px;
+}

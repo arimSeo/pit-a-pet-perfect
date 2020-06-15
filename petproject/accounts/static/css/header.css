@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* chat 오른쪽 아이콘을 중앙배열(살짝 내려주더라) */
+  margin-bottom: 30px;
+}
+
+.header .header__title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.header .header__icon {
+  font-size: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.header .header__header-column {
+  display: flex;
+  align-items: center;
+  /* 베스트프렌드와 화살표를 배열해준다. */
+}
+
+.header .header__back-btn {
+  font-size: 22px;
+  margin-right: 10px;
+}
