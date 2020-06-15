@@ -64,13 +64,13 @@ def regi_profile(request):
     regi_profile_form = ProfileCreationForm(instance=my_pet)
     if request.method == "POST":
 
-        petname= ProfileCreationForm(request.POST['pet_name'])
-        pettype= ProfileCreationForm(request.POST['pet_type'])
-        petage= ProfileCreationForm(request.POST['pet_age'])
-        petgender= ProfileCreationForm(request.POST['pet_gender'])
-        # petlocate= ProfileCreationForm(request.POST['pet_locate'])
-        petimage= ProfileCreationForm(request.POST['pet_image'])
-        petintro= ProfileCreationForm(request.POST['pet_intro'])
+        # petname= ProfileCreationForm(request.POST['pet_name'])
+        # pettype= ProfileCreationForm(request.POST['pet_type'])
+        # petage= ProfileCreationForm(request.POST['pet_age'])
+        # petgender= ProfileCreationForm(request.POST['pet_gender'])
+        # # petlocate= ProfileCreationForm(request.POST['pet_locate'])
+        # petimage= ProfileCreationForm(request.POST['pet_image'])
+        # petintro= ProfileCreationForm(request.POST['pet_intro'])
 
         saveform = ProfileCreationForm(request.POST,request.FILES,instance=my_pet)
         if saveform.is_valid:
@@ -78,7 +78,7 @@ def regi_profile(request):
             return redirect('myprofile')        #myprofile로 가게 해주세요
 
     return render(request, 'registration/regi_profile.html', {'regi_profile_form':regi_profile_form, 'my_pet':my_pet})
-
+# 'regi_profile_form':regi_profile_form,
 #
 # def register(request):
 #     if request.method == "POST":
@@ -115,7 +115,7 @@ def photoplus(request):
     if request.method == "POST":
         plusphoto_form = PlusPhotoForm(request.POST, request.FILES)
         # plusphoto_form.save()
-        plus = PlusPhotoForm(request.POST['plus_image'])
+        # plus = PlusPhotoForm(request.POST['plus_image'])
         if plusphoto_form.is_valid():   
             temp = plusphoto_form.save(commit=False)
             temp.user = request.user
