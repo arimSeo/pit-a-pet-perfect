@@ -13,6 +13,8 @@
     <!-- <link rel="shortcut icon" type="static/image/" href="logo.png"/> -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}?v=1.0">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile2.css' %}"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/search2.css' %}">
 </head>
 
 <body>
@@ -31,42 +33,36 @@
 
 
         <div class="container">
-            <!-- {% csrf_token %} -->
-            {%if myprofile.pet_image%}
-            <img src='{{myprofile.pet_image.url}}' width="100" style="border-radius:80%">
-            <!-- 프로필사진등록안하면 아래사진으로 -->
-            {%else%}
-            <img src='https://ww.namu.la/s/6e2169ee0c893650ae2e9460f5cb1a1d21d1c0211d15f06716793ebed1cd82251a1ccfff20848faa68778375e3f52caf4e1228dab914198b7b06bb208a6b4d528dce882c960642997c258bfa4f3fa19a81f31fb935f83dac09cb11977e1b1d35'
-                width="100" style="border-radius:80%">
-            {%endif%}
-            <div class="letter"></div>
-            <p>{{myprofile.pet_name}}
-                ({{myprofile.pet_type}})
-            </p>
-
-            <p>follow 42 | follower 42</p>
-            <!-- {{loc}} -->
-
-
-            <a href="{% url 'profileinform' %}"><input type="submit" value="profile inform"></a>
-        
-            {% for content in photo %}
-
-            <div class="my_pet">
-                <img src="{{content.plus_image.url}}" width='90px' height='90px'>
-            </div>
-
-            {% endfor %}
-
-            <div class="make_pet">
-                <a href="{% url 'photoplus' %}">
-                    <div class="plus_btn">+</div>
-                </a>
-
-            </div>
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="키워드를 입력하세요">
+                <button type="submit" class="searchButton">
+                  <i class="fa fa-search"></i>
+               </button>
+             </div>
+           </div>
+         
+           <div class="popular word">
+             <div class="pp_word">
+                 최근 검색어
+             </div>
+         
+             <div class="keyword_box">강아지 간식</div>
+             <div class="keyword_box">고양이 사료</div>
+             <div class="keyword_box">24시 동물병원</div>
 
         </div>
+        <div class="popular word">
+            <div class="pp_word">
+                인기 검색어
+            </div>
+        
+            <div class="keyword_box">강아지 간식</div>
+            <div class="keyword_box">고양이 사료</div>
+            <div class="keyword_box">24시 동물병원</div>
 
+       </div>
+       
+       <button id="write_btn">글쓰기</button>
         <!-- 임시버튼---나중에 삭제 -->
 
         <div class="nav">

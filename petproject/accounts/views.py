@@ -176,3 +176,8 @@ def second(request):
 
 def third(request):
     return render(request, 'registration/third.html')
+
+
+
+def search(request):
+    return render(request,'search.html',)

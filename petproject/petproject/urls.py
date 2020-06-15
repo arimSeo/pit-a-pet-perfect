@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from accounts.views import startpage, register, regi_profile, myprofile, login, photoplus, profileinform, home, lat_lon, matching, map_home, first, second, third
+from accounts.views import startpage, register, regi_profile, myprofile, login, photoplus, profileinform, home, lat_lon, matching, map_home, first, second, third, search
 from django.contrib.auth.views import LoginView
 from django.conf.urls.static import static
 from django.conf import settings
@@ -38,5 +38,6 @@ urlpatterns = [
     path('accounts/first/', first, name="first"),
     path('accounts/second/', second, name="second"),
     path('accounts/third/', third, name="third"),
+    path('search/', search, name="search"),
 
 ] +static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
