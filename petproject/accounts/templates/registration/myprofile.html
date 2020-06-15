@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/703c3b8202.js" crossorigin="anonymous"></script>
     <!-- <link rel="shortcut icon" type="static/image/" href="logo.png"/> -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile.css' %}?v=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/myprofile2.css' %}"> -->
+ 
 </head>
 
 <body>
@@ -33,23 +33,23 @@
         <div class="container">
             <!-- {% csrf_token %} -->
             {%if myprofile.pet_image%}
-            <img src='{{myprofile.pet_image.url}}' width="100" style="border-radius:80%">
+            <img src='{{myprofile.pet_image.url}}' width="120" style="border-radius:80%"/>
             <!-- 프로필사진등록안하면 아래사진으로 -->
             {%else%}
             <img src='https://ww.namu.la/s/6e2169ee0c893650ae2e9460f5cb1a1d21d1c0211d15f06716793ebed1cd82251a1ccfff20848faa68778375e3f52caf4e1228dab914198b7b06bb208a6b4d528dce882c960642997c258bfa4f3fa19a81f31fb935f83dac09cb11977e1b1d35'
-                width="100" style="border-radius:80%">
+                width="120" style="border-radius:80%"/>
             {%endif%}
-            <div class="letter"></div>
-            <p>{{myprofile.pet_name}}
+            
+            <p class="letter">{{myprofile.pet_name}}
                 ({{myprofile.pet_type}})
-            </p>
-
-            <p>follow 42 | follower 42</p>
+                <br>
+            follow 42 | follower 42</p>
             <!-- {{loc}} -->
-
-
+            <br> 
+          
             <a href="{% url 'profileinform' %}"><input type="submit" value="profile inform"></a>
-        
+            <br><br>
+            
             {% for content in photo %}
 
             <div class="my_pet">
@@ -57,6 +57,7 @@
             </div>
 
             {% endfor %}
+
 
             <div class="make_pet">
                 <a href="{% url 'photoplus' %}">
@@ -69,27 +70,35 @@
 
         <!-- 임시버튼---나중에 삭제 -->
 
-        <div class="nav">
-            <div class="nav_body">
-                <ul class="nav__list">
-                    <li class="nav__list-item">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__list-item">
+                    <a href="{% url 'myprofile' %}">
                         <i class="far fa-user"></i>
-                    </li>
-                    <li class="nav__list-item">
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="{% url 'matching' %}">
                         <i class="fas fa-comment"></i>
-                    </li>
-                    <li class="nav__list-item">
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="{% url 'home' %}">
                         <i class="fas fa-home"></i>
-                    </li>
-                    <li class="nav__list-item">
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="{% url 'map_home' %}">
                         <i class="fas fa-map-marked-alt"></i>
-                    </li>
-                    <li class="nav__list-item">
-                        <a href="info.html">
-                            <i class="fas fa-ellipsis-h"></i>
-                        </a>
-                    </li>
-                </ul>
+                    </a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="info.html">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
             </div>
         </div>
 
